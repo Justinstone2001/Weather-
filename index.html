@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,48 @@
     <source>
 </head>
 <script src="./assets/js/script.js"></script>
+<script src="./assets/css/style.css"></script>
+
 <body>
-    
+    <header class="hero">
+        <h1 class="title">
+            Weather Finder
+        </h1>
+        <p>Search by city to find the current local weather!
+        </p>
+    </header>
+
+
+    <main class="flex-row justify-space-between">
+        <div class="col-12 col-md-4">
+
+            <div class="card">
+                <h3 class="card-header text-uppercase">Search By City</h3>
+                <form id="city-form" class="card-body">
+                    <label class="form-label" for="city">City</label>
+                    <input name="city" id="city" type="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="col-12 col-md-8">
+            <h2 class="history">History: <span id="history"></span></h2>
+            <div id="history-container" class="list-group"></div>
+        </div>
+
+        <div class="col-12 col-md-8">
+            <h2 class="weather">Weather: <span id="weather"></span></h2>
+            <div id="weather-container" class="list-group"></div>
+        </div>
+
+        <div class="col-12 col-md-8">
+            <h2 class="forecast">5-day forecast: <span id="forecast"></span></h2>
+            <div id="forecast-container" class="list-group"></div>
+        </div>
+    </main>
+
 </body>
+
 </html>
