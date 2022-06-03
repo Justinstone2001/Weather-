@@ -5,7 +5,34 @@ var weatherEl = document.querySelector('#weather');
 var weatherContainerEl = document.querySelector('#weather-container');
 var forecastContainerEl = document.querySelector('#forecast-container');
 var citySearchEl = document.querySelector('#search-city');
-var historyEl = document.querySelector('#')
+var historyEl = document.querySelector('#city-button');
+var searchCity = document.querySelector('#search-city');
+
+var submitHandler = function(event) {
+    event.preventDefault();
+
+    var cityName = cityNameEl.value.trim();
+
+    if (cityName) {
+        getWeatherOfCity(cityName);
+
+        weatherContainerEl.textContent = '';
+        cityNameEl.value = '';
+    } else {
+        alert('City does not exist, try again!')
+    }
+}
+
+var buttonHandler = function(event) {
+    var city = event.target.getAttribute('data-city');
+
+    if (city) {
+        getWeatherOfCity(city);
+        weatherContainerEl.textContent = ''l
+    }
+};
+
+
 
 
 function init() {
