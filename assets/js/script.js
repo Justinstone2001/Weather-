@@ -1,11 +1,15 @@
 var cityFormEl = document.querySelector('#city-form')
 var cityNameEl = document.querySelector('#city');
+var buttonContainerEl = document.querySelector('#button-container');
 var weatherEl = document.querySelector('#weather');
-var weatherContainerEl = document.querySelector('#weather')
+var weatherContainerEl = document.querySelector('#weather-container');
+var forecastContainerEl = document.querySelector('#forecast-container');
+var citySearchEl = document.querySelector('#search-city');
+var historyEl = document.querySelector('#')
 
 
 function init() {
-    fetch('http://api.openweathermap.org/geo/1.0/direct?q=Nashville&limit=1&appid=79fd1882fd1e16cad8be5bc759899879')
+    fetch('http://api.openweathermap.org/geo/1.0/direct?q=Raleigh&limit=1&appid=79fd1882fd1e16cad8be5bc759899879')
     .then(function(response) {
         return response.json();
     })
@@ -29,7 +33,6 @@ function getOneCallWeather(lat, lon){
             var windEl = document.createElement('p');
             var uvEl = document.createElement('p');
             var humidityEl = document.createElement('p');
-
             tempEl.textContent = "Temperature: " + temp;
             windEl.textContent = "Wind Speed: " + wind_speed;
             uvEl.textContent = "UVI: " + uvi;
@@ -42,7 +45,6 @@ function getOneCallWeather(lat, lon){
                 console.log(day);
             }
         });
-
  }
 
 init();
